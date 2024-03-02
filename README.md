@@ -13,6 +13,12 @@ This repository contains Docker Compose files for deploying various services. Be
 - **postgresql**
   - `docker-compose.yml`: Docker Compose file for PostgreSQL deployment.
 
+- **ELK**
+  - *config*
+    - `logstash.conf`: Standart logstash config with logs settings
+    - `logstash.yml`: Standart logstash config with hosts settings
+  - `docker-compose.yml`: Docker Compose file for ClickHouse deployment.
+
 ## Usage
 
 ### ClickHouse
@@ -47,6 +53,18 @@ This repository contains Docker Compose files for deploying various services. Be
     ```
 
 2. Start PostgreSQL service:
+    ```bash
+    docker-compose up --build -d
+    ```
+
+### ELK
+
+1. Navigate to the `ELK` directory:
+    ```bash
+    cd ELK
+    ```
+
+2. Start ELK services:
     ```bash
     docker-compose up --build -d
     ```
