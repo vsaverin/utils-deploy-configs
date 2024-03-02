@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  clickhouse-server:
+    image: lunalabsltd/clickhouse-server:20.6.7.4-arm
+    container_name: clickhouse-server
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    networks:
+      - click_network
+    volumes:
+      - ./config/users.xml:/etc/clickhouse-server/users.xml
+
+networks:
+  click_network:
+    external: true
+
