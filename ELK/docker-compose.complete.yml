@@ -26,8 +26,8 @@ services:
       - "5044:5044"
       - "9600:9600"
     volumes:
-      - ./elk-config/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ./elk-config/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./elk-config/logstash/Logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./elk-config/logstash/Logstash.yml:/usr/share/logstash/config/logstash.yml
       - ls_data:/usr/share/logstash/data
 
     networks:

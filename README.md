@@ -15,8 +15,13 @@ This repository contains Docker Compose files for deploying various services. Be
 
 - **ELK**
   - *config*
-    - `logstash.conf`: Standart logstash config with logs settings
-    - `logstash.yml`: Standart logstash config with hosts settings
+    - *logstash*
+        - `Logstash.conf`: Standart logstash config with logs settings
+        - `Logstash.yml`: Standart logstash config with hosts settings
+    - *elasticsearch*
+        - `elasticsearch.yml`: Elasticsearch main configuration file
+    - *kibana*
+        - `kibana.yml`: Kibana main configuration file
   - `docker-compose.yml`: Docker Compose file for ClickHouse deployment.
 
 ## Usage
