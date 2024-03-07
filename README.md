@@ -33,13 +33,6 @@ This repository contains Docker Compose files for deploying various services. Be
     docker-compose up --build -d
     ```
 
-3. Set passwords in elasticsearch container (by default, for local development set "localpassword")
-    ```bash
-    docker container exec -it clickhouse /bin/bash
-
-    /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
-    ```
-
 ### Kafka
 
 1. Navigate to the `kafka` directory:
@@ -74,6 +67,13 @@ This repository contains Docker Compose files for deploying various services. Be
 2. Start ELK services:
     ```bash
     docker-compose up --build -d
+    ```
+
+3. Set passwords in elasticsearch container (by default, for local development set "localpassword")
+    ```bash
+    docker container exec -it clickhouse /bin/bash
+
+    /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
     ```
 
 ## Notes
