@@ -13,12 +13,11 @@ services:
       - discovery.type=single-node
       - http.host=0.0.0.0
       - transport.host=0.0.0.0
-      - xpack.security.enabled=false
       - xpack.monitoring.enabled=false
       - cluster.name=elasticsearch
       - bootstrap.memory_lock=true
     networks:
-      - log_network
+      - elk_log_network
 
   logstash:
     image: docker.elastic.co/logstash/logstash:7.10.0
@@ -32,7 +31,7 @@ services:
       - ls_data:/usr/share/logstash/data
 
     networks:
-      - log_network
+      - elk_log_network
     depends_on:
       - elasticsearch
 
@@ -45,12 +44,12 @@ services:
       - ./elk-config/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
       - kb_data:/usr/share/kibana/data
     networks:
-      - log_network
+      - elk_log_network
     depends_on:
       - elasticsearch
 
 networks:
-  log_network:
+  elk_log_network:
     external: true
 
 volumes:
