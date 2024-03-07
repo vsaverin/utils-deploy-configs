@@ -71,7 +71,7 @@ This repository contains Docker Compose files for deploying various services. Be
 
 3. Set passwords in elasticsearch container (by default, for local development set "localpassword")
     ```bash
-    docker container exec -it clickhouse /bin/bash
+    docker container exec -it elasticsearch /bin/bash
 
     /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
     ```
