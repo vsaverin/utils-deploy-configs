@@ -28,6 +28,7 @@ services:
     volumes:
       - ./elk-config/logstash/Logstash.conf:/usr/share/logstash/pipeline/logstash.conf
       - ./elk-config/logstash/Logstash.yml:/usr/share/logstash/config/logstash.yml
+      - /var/logs/talk:/app/logs
       - ls_data:/usr/share/logstash/data
 
     networks:
