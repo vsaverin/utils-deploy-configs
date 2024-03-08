@@ -16,7 +16,8 @@ This repository contains Docker Compose files for deploying various services. Be
 - **ELK**
   - *config*
     - *logstash*
-        - `Logstash.conf`: Standart logstash config with logs settings
+        - `Logstash.conf`: Can be used to read logs from .json file
+        - `Logstash_from_http.conf`: Can be used to send logs via http API
         - `Logstash.yml`: Standart logstash config with hosts settings
     - *elasticsearch*
         - `elasticsearch.yml`: Elasticsearch main configuration file
@@ -63,6 +64,15 @@ This repository contains Docker Compose files for deploying various services. Be
     ```
 
 ### ELK
+
+#### Before deploy
+
+1. Choose type of logs input u need (.json or http API) and reconfigure config in docker-compose file
+
+2. If i choose .json file config, u should specify path to shared folder, where ur logs will be located
+
+
+#### Deploy
 
 1. Navigate to the `ELK` directory:
     ```bash
