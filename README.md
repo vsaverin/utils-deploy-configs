@@ -23,7 +23,10 @@ This repository contains Docker Compose files for deploying various services. Be
         - `elasticsearch.yml`: Elasticsearch main configuration file
     - *kibana*
         - `kibana.yml`: Kibana main configuration file
-  - `docker-compose.yml`: Docker Compose file for ClickHouse deployment.
+  - `docker-compose.complete.yml`: Docker Compose file for ELK deployment.
+
+- **rabbitmq**
+  - `docker-compose.yml`: Compose file for RabbitMQ deployment
 
 ## Usage
 
@@ -59,6 +62,19 @@ This repository contains Docker Compose files for deploying various services. Be
     ```
 
 2. Start PostgreSQL service:
+    ```bash
+    docker-compose up --build -d
+    ```
+
+
+### RabbitMQ
+
+1. Navigate to the `rabbitmq` directory:
+    ```bash
+    cd rabbitmq
+    ```
+
+2. Start rabbitmq service:
     ```bash
     docker-compose up --build -d
     ```
