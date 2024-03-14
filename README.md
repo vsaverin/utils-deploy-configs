@@ -1,5 +1,12 @@
 # Deployment Files Collection
 
+Currently contains:
+- ClickHouse
+- Apache Kafka
+- PostgreSQL
+- ELK
+- RabbitMQ
+
 This repository contains Docker Compose files for deploying various services. Below is the structure of the repository:
 
 - **clickhouse**
