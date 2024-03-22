@@ -1,0 +1,41 @@
+version: '3'
+services:
+  base-mongo-express:
+    image: mongo-express
+    container_name: base-mongo-express
+    ports:
+      - 8090:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: base-mongo-db
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: q
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: rootpassword
+    depends_on:
+      - base-mongo-db
+    links:
+      - base-mongo-db
+    networks:
+      - mongo_db_network
+
+  base-mongo-db:
+    image: mongo:latest
+    container_name: base-mongo-db
+    environment:
+      MONGO_INITDB_DATABASE: demodb
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - "27020:27017"
+    volumes:
+      - base_mongodb_data_container:/data/db
+    networks:
+      - mongo_db_network
+
+networks:
+  mongo_db_network:
+    external: true
+
+volumes:
+  base_mongodb_data_container:
