@@ -6,6 +6,7 @@ Currently contains:
 - PostgreSQL
 - ELK
 - RabbitMQ
+- MongoDB
 
 This repository contains Docker Compose files for deploying various services. Below is the structure of the repository:
 
