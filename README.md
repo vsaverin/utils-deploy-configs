@@ -35,6 +35,9 @@ This repository contains Docker Compose files for deploying various services. Be
 - **rabbitmq**
   - `docker-compose.yml`: Compose file for RabbitMQ deployment
 
+- **mongodb**
+  - `docker-compose.yml`: Compose file for MongoDB deployment
+
 ## Usage
 
 ### ClickHouse
@@ -79,6 +82,18 @@ This repository contains Docker Compose files for deploying various services. Be
 1. Navigate to the `rabbitmq` directory:
     ```bash
     cd rabbitmq
+    ```
+
+2. Start rabbitmq service:
+    ```bash
+    docker-compose up --build -d
+    ```
+
+### MongoDB
+
+1. Navigate to the `mongodb` directory:
+    ```bash
+    cd mongodb
     ```
 
 2. Start rabbitmq service:
