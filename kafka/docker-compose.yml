@@ -1,10 +1,10 @@
-version: '2'
+version: '3'
 services:
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
     networks:
-      - mynetwork
+      - kafka_network
     ports:
       - 8080:8080
     depends_on:
@@ -19,7 +19,7 @@ services:
     hostname: zookeeper
     container_name: zookeeper
     networks:
-      - mynetwork
+      - kafka_network
     ports:
       - "2181:2181"
     environment:
@@ -31,7 +31,7 @@ services:
     hostname: kafka
     container_name: kafka
     networks:
-      - mynetwork
+      - kafka_network
     depends_on:
       - zookeeper
     ports:
@@ -64,5 +64,5 @@ services:
   #              kafka-console-producer --bootstrap-server kafka:29092 --topic users < /data/message.json'"
 
 networks:
-  mynetwork:
+  kafka_network:
     external: true

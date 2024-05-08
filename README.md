@@ -7,6 +7,7 @@ Currently contains:
 - ELK
 - RabbitMQ
 - MongoDB
+- Local Telegram Bot API Server
 
 This repository contains Docker Compose files for deploying various services. Below is the structure of the repository:
 
@@ -38,6 +39,9 @@ This repository contains Docker Compose files for deploying various services. Be
 
 - **mongodb**
   - `docker-compose.yml`: Compose file for MongoDB deployment
+  
+- **telegram**
+  - `docker-compose.yml`: Compose file for telegram bot api server deployment
 
 ## Usage
 
